@@ -133,137 +133,294 @@
         </div>
     </main>
   </body>
-  <style>
-    body{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    a{
-        text-decoration: none;
-        color: black;
-    }
-    .time{
-        font-size: 12px;
-        color: grey;
-        padding:0px 8px;
-        margin: 0px;
-        font-weight: 700;
-        display: flex;
-        flex-direction:column;
-        align-items: center;
-        justify-content:center;
-    }
-    .course{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: space-between;
-        padding: 0px;
-    }
-    .course_title{
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-    }
-    .main{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 60%;
-        height: 60%;
-        padding:0px;
-    }
-    h1{
-        padding:0px;
-        margin:4px 0px;
-        font-size: 24px;
-    } 
-    div{
-        margin:0px;
-    }
-    p{
-        padding:0px;
-    }
-    .p{
-        padding:4px 16px;
-        margin: 0px;
-    }
-    .profile_image{
-        display: block;
-        width: 12%;
-        height: 12%;
-        padding: 8px;
-    }
-    .image_style{
-        width: 100%;
-        height: 100%;
-        border-radius: 48%;
-    }
-    .title{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-    }
-    .headings{
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        padding: 16px;
-        justify-content: space-between; 
-        font-family:'Courier New';
-        font-size: 14px;
-        width: 75%;
-        height: 100%;
+    <style>
+    @media only screen and (max-width: 600px) {
+        .row {
+            display: flex; /* equal height of the children */
+        }
+
+        .col {
+            flex: 1; /* additionally, equal width */
+            
+            padding: 1em;
+            /* border: solid; */
+        }
+        .body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin:8px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .main{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /* width: 100%; */
+            height: 100%;
+            padding:0px;
+            /* margin:16px; */
+            overflow:hidden;
+            border:1px solid #efefef;
+            border-radius: 16px;
+            background-color: #efefef;
+
+        }
+        .headings{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0px;
+            justify-content: space-between; 
+            font-family:'Courier New';
+            font-size: 10px;
+
+            /* width: 50%; */
+            /* height: 100%; */
+
+        }
+        .rightBox{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            /* background-color:white;   */
+            /* width: 10%; */
+            /* min-height: 100%; */
+            flex:1;
+            border-radius:16px 0px 0px 16px;
+            padding: 8px;
+            border-right:2px solid grey;
+        }
+        .leftBox{
+            /* background-color: #efefef; */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            border-radius:0px 16px 16px 0px;
+            padding:29px 0px;
+            /* min-height:100%; */
+            flex:1;
+            /* border:2px solid #efefef; */
+        }
+        .title{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            /* border: 1px solid black; */
+        }
+        .profile_image{
+            display: block;
+            width: 12%;
+            height: 12%;
+            padding: 8px;
+        }
+        .image_style{
+            width: 100%;
+            height: 100%;
+            border-radius: 48%;
+        }
+        p{
+            padding:0px;
+        }
+        .p{
+            padding:4px 16px;
+            margin: 0px;
+        }
+        h1{
+            padding:8px;
+            margin:4px 0px;
+            font-size: 16px;
+        } 
+        div{
+            margin:0px;
+        }
+        .time{
+            font-size: 10px;
+            color: grey;
+            padding:0px 8px;
+            margin: 0px;
+            font-weight: 700;
+            display: flex;
+            flex-direction:row; 
+            align-items: center;
+            justify-content:center;
+            /* border:1px solid black; */
+        }
+        .course{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: space-between;
+            padding: 0px;
+        }
+        .course_title{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .subTitle{
+            font-weight: 700;
+            /* color: #001111; */
+        }
+        button:hover {
+            background-color: #efefef;
+            font-weight: 500;
+            height: 4px;
+            padding:0px;
+            margin: 0px;
+            display: none;
+        }
+        button{
+            border:none;
+        }
+        .button{
+            height: 4%;
+            width: 10%;
+        } 
 
     }
-    .leftBox h1{
-        padding:0px 12px;
-    }
-    .rightBox{
+    @media only screen  and (min-width: 1200px){
+        .body{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-around;
-        background-color:white;  
-        width: 70%;
-        border-radius:16px 0px 0px 16px;
-        padding: 8px;
-        border:1px solid aliceblue;
-    }
-    .leftBox{
-        background-color: #efefef;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-evenly;
-        border-radius:0px 16px 16px 0px;
-        padding:29px 0px;
-        border:2px solid #efefef;
-    }
-    .subTitle{
-        font-weight: 700;
-        color: #001111;
-    }
-    button:hover {
-        background-color: #efefef;
-        font-weight: 500;
-        height: 4px;
-        padding:0px;
-        margin: 0px;
-        display: none;
-    }
-    button{
-        border:none;
-    }
-    .button{
-        height: 4%;
-        width: 10%;
+        align-items: center;
+        justify-content: center;
+        }
+        a{
+            text-decoration: none;
+            /* color: black; */
+        }
+        .time{
+            font-size: 12px;
+            color: grey;
+            padding:0px 8px;
+            margin: 0px;
+            font-weight: 700;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content:center;
+        }
+        .course{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: space-between;
+            padding: 0px;
+        }
+        .course_title{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .main{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+            height: 60%;
+            padding:0px;
+        }
+        h1{
+            padding:0px;
+            margin:4px 0px;
+            font-size: 24px;
+        } 
+        div{
+            margin:0px;
+        }
+        p{
+            padding:0px;
+        }
+        .p{
+            padding:4px 16px;
+            margin: 0px;
+        }
+        .profile_image{
+            display: block;
+            width: 12%;
+            height: 12%;
+            padding: 8px;
+        }
+        .image_style{
+            width: 100%;
+            height: 100%;
+            border-radius: 48%;
+        }
+        .title{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .headings{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 16px;
+            justify-content: space-between; 
+            font-family:'Courier New';
+            font-size: 14px;
+            width: 75%;
+            height: 100%;
+
+        }
+        .leftBox h1{
+            padding:0px 12px;
+        }
+        .rightBox{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            background-color:white;  
+            width: 70%;
+            border-radius:16px 0px 0px 16px;
+            padding: 8px;
+            border:1px solid aliceblue;
+        }
+        .leftBox{
+            background-color: #efefef;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            border-radius:0px 16px 16px 0px;
+            padding:29px 0px;
+            border:2px solid #efefef;
+        }
+        .subTitle{
+            font-weight: 700;
+            color: #001111;
+        }
+        button:hover {
+            background-color: #efefef;
+            font-weight: 500;
+            height: 4px;
+            padding:0px;
+            margin: 0px;
+            display: none;
+        }
+        button{
+            border:none;
+        }
+        .button{
+            height: 4%;
+            width: 10%;
+        }   
     }
   </style>
 </html>
